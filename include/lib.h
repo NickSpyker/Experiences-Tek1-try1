@@ -10,6 +10,7 @@
     #include <unistd.h>
     #include <string.h>
     #include <stdio.h>
+    #include <curl/curl.h>
 
     void temp(void);
 
