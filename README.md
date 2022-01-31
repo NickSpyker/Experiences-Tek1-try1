@@ -3,6 +3,12 @@
 
 ### Requirements:
 ```
+sudo apt-get install build-essential
+```
+```
+sudo apt-get install gcc
+```
+```
 sudo apt-get install libcurl4-openssl-dev
 ```
 ```
