@@ -16,7 +16,7 @@ all: $(TARGET)
 
 $(TARGET): $(OBJ)
 	@make -C lib
-	@$(CC) -o $(TARGET) $(OBJ) -Llib -lmy -lm
+	@$(CC) -o $(TARGET) $(OBJ) -Llib -lmy -lm -lcurl
 	@echo "Build OK"
 
 clean :
