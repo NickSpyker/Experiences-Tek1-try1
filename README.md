@@ -3,8 +3,6 @@
 
 ### Requirements:
 |-> Install all with: `./install_requirements.sh`
-
-Or:
 ```
 sudo apt-get install build-essential
 ```
