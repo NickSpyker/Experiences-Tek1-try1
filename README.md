@@ -2,6 +2,7 @@
 ## B0 - Hub | MPL-0-1
 
 ### Requirements:
+|-> Install all with: `./install_requirements.sh`
 ```
 sudo apt-get install build-essential
 ```
