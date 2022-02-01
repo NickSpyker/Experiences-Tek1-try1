@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+
+require_relative "tools"
+require_relative "get_data"
+
+url                         =   "https://www.boursorama.com/bourse/action/graph/ws/UpdateCharts?symbol=1rPCAC"
+frequency_in_seconds        =   5
+operating_time_in_seconds   =   30
+
+for i in 1 .. operating_time_in_seconds / frequency_in_seconds
+    buffer = get_data(url)
+    system "clear"
+    puts "- CAC40\tfrequency: #{frequency_in_seconds}s -\n\n"
+    print_in_color("  ///|  Data  |///", "cyan", true)
+    print_in_color("   open:  ", "green", false)
+    print_in_color(buffer[1], "red", true)
+    print_in_color("   hight: ", "green", false)
+    print_in_color(buffer[2], "red", true)
+    print_in_color("   low:   ", "green", false)
+    print_in_color(buffer[3], "red", true)
+    print_in_color("   close: ", "green", false)
+    print_in_color(buffer[4], "red", true)
+    print_in_color("  ///| Finish |///", "cyan", true)
+    sleep frequency_in_seconds
+end
