@@ -2,26 +2,16 @@
 
 require_relative "tools"
 require_relative "get_data"
+require_relative "print_info"
 
-url                         =   "https://www.boursorama.com/bourse/action/graph/ws/UpdateCharts?symbol=1rPCAC"
+type                        =   "1rPCAC"
+url                         =   "https://www.boursorama.com/bourse/action/graph/ws/UpdateCharts?symbol=#{type}"
 frequency_in_seconds        =   5
-operating_time_in_seconds   =   30
+operating_time_in_seconds   =   50
+all_data                    =   [type, url, frequency_in_seconds, operating_time_in_seconds]
 
 for i in 1 .. operating_time_in_seconds / frequency_in_seconds
     buffer = get_data(url)
-    system "clear"
-    puts "- CAC40\tfrequency: #{frequency_in_seconds}s -\n\n"
-    print_in_color("  ///|  Data  |///", "cyan", true)
-    print_in_color("   open:   ", "green", false)
-    print_in_color(buffer[1], "red", true)
-    print_in_color("   hight:  ", "green", false)
-    print_in_color(buffer[2], "red", true)
-    print_in_color("   low:    ", "green", false)
-    print_in_color(buffer[3], "red", true)
-    print_in_color("   close:  ", "green", false)
-    print_in_color(buffer[4], "red", true)
-    print_in_color("   volume: ", "green", false)
-    print_in_color(buffer[5], "red", true)
-    print_in_color("  ///| Finish |///", "cyan", true)
+    print_info(buffer, all_data)
     sleep frequency_in_seconds
 end
