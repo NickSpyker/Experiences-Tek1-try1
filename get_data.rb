@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 def get_data url
-    system "curl #{url} > out.json && clear"
+    system "curl #{url} > out.json"
     buffer = (open "out.json").read
     buffer.delete! "azertyuiopqsdfghjklmwxcvbn:\t{}\""
     buffer = buffer.split ','

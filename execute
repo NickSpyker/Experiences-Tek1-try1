@@ -4,11 +4,12 @@ require_relative "tools"
 require_relative "get_data"
 require_relative "print_info"
 
-type                        =   "1rPCAC"
+type                        =   "1rPKER"
 url                         =   "https://www.boursorama.com/bourse/action/graph/ws/UpdateCharts?symbol=#{type}"
-frequency_in_seconds        =   5
-operating_time_in_seconds   =   50
+frequency_in_seconds        =   10
+operating_time_in_seconds   =   3600
 all_data                    =   [type, url, frequency_in_seconds, operating_time_in_seconds]
+money = 1000
 
 for i in 1 .. operating_time_in_seconds / frequency_in_seconds
     buffer = get_data(url)
