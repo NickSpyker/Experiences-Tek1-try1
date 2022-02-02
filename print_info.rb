@@ -1,5 +1,14 @@
 #!/usr/bin/env ruby
 
+def print_mm mm, data_mm
+    print "|-> mm 20 data: "
+    for i in 1 .. 20
+        print "#{data_mm[i]} "
+    end
+    print "\n"
+    puts "|-> mm = #{mm}"
+end
+
 def print_into_screen buffer
     time = Time.new
     var1 = "open: #{buffer[1]}"
@@ -29,5 +38,4 @@ def print_info buffer, all_data
     print_in_color("  ///| Finish |///", "cyan", true)
     print "\n"
     puts "- #{all_data[0]} | frequency: #{all_data[2]}s -\n\n"
-    print "\n"
 end

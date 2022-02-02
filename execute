@@ -3,16 +3,23 @@
 require_relative "tools"
 require_relative "get_data"
 require_relative "print_info"
+require_relative "math"
 
 type                        =   "1rPKER"
 url                         =   "https://www.boursorama.com/bourse/action/graph/ws/UpdateCharts?symbol=#{type}"
+mm                          =   -1
 frequency_in_seconds        =   10
 operating_time_in_seconds   =   3600
 all_data                    =   [type, url, frequency_in_seconds, operating_time_in_seconds]
-money = 1000
+data_mm                     =   [false, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+#                                  0    1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+money                       =   1000
 
 for i in 1 .. operating_time_in_seconds / frequency_in_seconds
     buffer = get_data(url)
     print_info(buffer, all_data)
+    data_mm = fill_data_mm(data_mm, buffer)
+    mm = get_mm_20(data_mm)
+    print_mm(mm, data_mm)
     sleep frequency_in_seconds
 end
