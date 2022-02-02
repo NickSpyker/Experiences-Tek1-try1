@@ -1,0 +1,1 @@
+13h53 58s 	 >> open: 686.0 | hight: 690.0 | low: 679.0 | close: 690.0 | volume: 90854.0

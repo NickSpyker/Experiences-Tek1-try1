@@ -20,6 +20,7 @@ game                        =   "Wait..."
 money                       =   10000
 cash                        =   0
 x                           =   ""
+door                        =   0
 
 system "rm -rf screen.txt && touch screen.txt"
 system "rm -rf out.json && touch out.json"
@@ -35,7 +36,7 @@ for i in 1 .. operating_time_in_seconds / frequency_in_seconds
     if !start
         puts "\n-> Please wait 20 minutes for the program to load the data and then start playing."
     end
-    var = play(all_data, buffer, mm, mm_history, start, var, game, money, cash)
+    var = play(all_data, buffer, mm, mm_history, start, var, game, money, cash, door)
     if cash != 0
         x = "\nIn Game : #{cash}"
     else
