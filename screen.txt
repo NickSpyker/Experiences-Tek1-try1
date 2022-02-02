@@ -1,15 +1,1 @@
-11h36 32s 	 >> open: 686.0 | hight: 686.9 | low: 679.0 | close: 682.7 | volume: 63283.0
-11h36 33s 	 >> open: 686.0 | hight: 686.9 | low: 679.0 | close: 682.7 | volume: 63283.0
-11h36 35s 	 >> open: 686.0 | hight: 686.9 | low: 679.0 | close: 682.7 | volume: 63283.0
-11h36 36s 	 >> open: 686.0 | hight: 686.9 | low: 679.0 | close: 682.7 | volume: 63283.0
-11h36 38s 	 >> open: 686.0 | hight: 686.9 | low: 679.0 | close: 682.7 | volume: 63283.0
-11h36 39s 	 >> open: 686.0 | hight: 686.9 | low: 679.0 | close: 682.7 | volume: 63283.0
-11h36 41s 	 >> open: 686.0 | hight: 686.9 | low: 679.0 | close: 682.7 | volume: 63283.0
-11h36 42s 	 >> open: 686.0 | hight: 686.9 | low: 679.0 | close: 682.7 | volume: 63283.0
-11h36 44s 	 >> open: 686.0 | hight: 686.9 | low: 679.0 | close: 682.7 | volume: 63283.0
-11h36 45s 	 >> open: 686.0 | hight: 686.9 | low: 679.0 | close: 682.7 | volume: 63283.0
-11h36 47s 	 >> open: 686.0 | hight: 686.9 | low: 679.0 | close: 682.7 | volume: 63283.0
-11h36 49s 	 >> open: 686.0 | hight: 686.9 | low: 679.0 | close: 682.7 | volume: 63283.0
-11h36 51s 	 >> open: 686.0 | hight: 686.9 | low: 679.0 | close: 682.7 | volume: 63283.0
-11h36 53s 	 >> open: 686.0 | hight: 686.9 | low: 679.0 | close: 682.7 | volume: 63283.0
-11h36 55s 	 >> open: 686.0 | hight: 686.9 | low: 679.0 | close: 682.7 | volume: 63283.0
+11h40 4s 	 >> open: 686.0 | hight: 686.9 | low: 679.0 | close: 682.6 | volume: 64258.0

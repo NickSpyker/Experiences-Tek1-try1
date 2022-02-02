@@ -14,10 +14,10 @@ operating_time_in_seconds   =   36000
 all_data                    =   [type, url, frequency_in_seconds, operating_time_in_seconds]
 mm_history                  =   ["null"]
 data_mm                     =   [false, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-#                                  0    1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+#                           =      0    1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
 start                       =   false
 game                        =   "Wait..."
-money                       =   1000
+money                       =   10000
 cash                        =   0
 x                           =   ""
 
