@@ -1,12 +1,21 @@
 #!/usr/bin/env ruby
 
 def print_mm mm, data_mm
-    print "|-> mm 20 data: "
+    print_in_color("|-> mm 20 data = ", "cyan", false)
     for i in 1 .. 20
-        print "#{data_mm[i]} "
+        if (data_mm[i] != 0)
+            print_in_color("#{data_mm[i]} ", "green", false)
+        else
+            print_in_color("#{data_mm[i]} ", "red", false)
+        end
     end
     print "\n"
-    puts "|-> mm = #{mm}"
+    print_in_color("|-> mm         = ", "cyan", false)
+    if mm > 0
+        print_in_color("#{mm}", "green", true)
+    else
+        print_in_color("#{mm}", "red", true)
+    end
 end
 
 def print_into_screen buffer
@@ -37,5 +46,5 @@ def print_info buffer, all_data
     print_in_color(buffer[5], "red", true)
     print_in_color("  ///| Finish |///", "cyan", true)
     print "\n"
-    puts "- #{all_data[0]} | frequency: #{all_data[2]}s -\n\n"
+    print_in_color("- #{all_data[0]} | frequency: #{all_data[2]}s -\n\n", "green", true)
 end

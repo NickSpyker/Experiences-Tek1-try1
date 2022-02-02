@@ -15,6 +15,8 @@ data_mm                     =   [false, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 #                                  0    1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
 money                       =   1000
 
+system "rm -rf screen.txt && touch screen.txt"
+
 for i in 1 .. operating_time_in_seconds / frequency_in_seconds
     buffer = get_data(url)
     print_info(buffer, all_data)
