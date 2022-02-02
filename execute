@@ -1,21 +1,29 @@
 #!/usr/bin/env ruby
 
-require_relative "tools"
-require_relative "get_data"
 require_relative "print_info"
+require_relative "get_data"
+require_relative "brain"
+require_relative "tools"
 require_relative "math"
 
 type                        =   "1rPKER"
 url                         =   "https://www.boursorama.com/bourse/action/graph/ws/UpdateCharts?symbol=#{type}"
 mm                          =   -1
-frequency_in_seconds        =   10
-operating_time_in_seconds   =   3600
+frequency_in_seconds        =   60
+operating_time_in_seconds   =   36000
 all_data                    =   [type, url, frequency_in_seconds, operating_time_in_seconds]
+mm_history                  =   ["null"]
 data_mm                     =   [false, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 #                                  0    1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+start                       =   false
+game                        =   "Wait..."
 money                       =   1000
+cash                        =   0
+x                           =   ""
 
 system "rm -rf screen.txt && touch screen.txt"
+
+var = 0
 
 for i in 1 .. operating_time_in_seconds / frequency_in_seconds
     buffer = get_data(url)
@@ -23,5 +31,18 @@ for i in 1 .. operating_time_in_seconds / frequency_in_seconds
     data_mm = fill_data_mm(data_mm, buffer)
     mm = get_mm_20(data_mm)
     print_mm(mm, data_mm)
+    if !start
+        puts "\n-> Please wait 20 minutes for the program to load the data and then start playing."
+    end
+    var = play(all_data, buffer, mm, mm_history, start, var, game, money, cash)
+    if cash != 0
+        x = "\nIn Game : #{cash}"
+    else
+        x = ""
+    end
+    puts "\nMoney   : #{money}\nGame    : #{game}#{x}\n\n"
     sleep frequency_in_seconds
+    if data_mm[0]
+        start = true
+    end
 end
