@@ -1,1 +1,0 @@
-11h40 4s 	 >> open: 686.0 | hight: 686.9 | low: 679.0 | close: 682.6 | volume: 64258.0

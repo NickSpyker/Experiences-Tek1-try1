@@ -22,6 +22,7 @@ cash                        =   0
 x                           =   ""
 
 system "rm -rf screen.txt && touch screen.txt"
+system "rm -rf out.json && touch out.json"
 
 var = 0
 
