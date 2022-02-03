@@ -7,14 +7,14 @@ def play all_data, buffer, mm, mm_history, start, var, game, money, cash, door
         var += 1
     end
     if mm_history.size > 5
-        if (mm_history[var] >= mm_history[var - 1] >= mm_history[var - 2] >= mm_history[var - 3])
+        if (mm_history[var].to_i > mm_history[var - 1].to_i) && (mm_history[var - 2].to_i > mm_history[var - 3].to_i)
             if (buffer[4] > mm) && (door == -1)
-                cash += buffer[4] if money >= buffer[4]
+                cash += buffer[4] if money > buffer[4]
                 money -= buffer[4]
                 game = "Bought..."
             end
         end
-        if (mm_history[var] <= mm_history[var - 1] <= mm_history[var - 2] <= mm_history[var - 3]) && ((buffer[4] < mm) && (door == 1))
+        if (mm_history[var].to_i < mm_history[var - 1].to_i) && (mm_history[var - 2].to_i < mm_history[var - 3].to_i) && ((buffer[4] < mm) && (door == 1))
             game = "Wait..."
             money += buffer[4]
             cash = 0
